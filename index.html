@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Portfolio</a>
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <ul class="menu">
+            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
+            <li><a href="#about" onclick="toggleMenu();">About</a></li>
+            <li><a href="#services" onclick="toggleMenu();">Services</a></li>
+            <li><a href="#skills" onclick="toggleMenu();">Skills</a></li>
+            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="home">
+        <div class="textBx">
+            <h2>Hello, I'm<br><span>Ramazan Mashanlo.</span></h2>
+            <h3>And I'm Backend Java Developer</h3>
+            <a href="#about" class="btn">About Me</a>
+        </div>
+        <ul class="sci">
+            <li><a href="#"><img src="img/instagramWhite.png"></a></li>
+            <li><a href="#"><img src="img/telegram1.png"></a></li>
+            <li><a href="#"><img src="img/linkedin.png"></a></li>
+        </ul>
+    </section>
+    <section class="about" id="about">
+        <div class="heading">
+            <h2>About Me</h2>
+        </div>
+        <div class="content">
+            <div class="contentBx w50">
+                <h3>I'm Backend Java Software Developer</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <a href="https://drive.google.com/file/d/1H6zMEE-hE2A_GMkO-f6yGbRTFCjN1ljc/view?usp=sharing">Download CV</a>
+            </div>
+        <div class="w50">
+            <img src="img/photo1.jpg" class="img">
+        </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+        <div class="heading white">
+            <h2>My services</h2>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text.  of classical Latin literature </p>
+        </div>
+        <div class="content">
+            <div class="servicesBx">
+                <img src="img/icon4.png">
+                <h2>Backend Development</h2>
+                <p>There are many variations of passages of Lorem Ipsum available</p>
+            </div>
+
+            <div class="servicesBx">
+                <img src="img/icon3.png">
+                <h2>Android App</h2>
+                <p>There are many variations of passages of Lorem Ipsum available</p>
+            </div>
+
+            <div class="servicesBx">
+                <img src="img/icon1.png">
+                <h2>Web Design</h2>
+                <p>There are many variations of passages of Lorem Ipsum available</p>
+            </div>
+
+            <div class="servicesBx">
+                <img src="img/icon2.png">
+                <h2>Web Development</h2>
+                <p>There are many variations of passages of Lorem Ipsum available</p>
+            </div>
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        <div class="heading">
+            <h2 class="title">My Skills</h2>
+        </div>
+        <div class="max-width">
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="text">My creative skills and experience</div>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here</p>
+                </div>
+                <div class="column right">
+                    <div class="bars">
+                        <div class="info">
+                            <span>Java Core, OOP</span>
+                            <span>80%</span>                        
+                        </div>  
+                        <div class="line java"></div>                   
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>Spring Framework</span>
+                            <span>40%</span>                          
+                        </div>           
+                        <div class="line spring"></div>          
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>Git</span>
+                            <span>60%</span>                         
+                        </div>              
+                        <div class="line git"></div>      
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>PostgreSQL</span>
+                            <span>70%</span>                        
+                        </div> 
+                        <div class="line postgreSQL"></div>                       
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>HTML, CSS</span>
+                            <span>60%</span>                           
+                        </div>      
+                        <div class="line HTML"></div>                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="heading white">
+            <h2>Contact Me</h2>
+            <p>Contrary to popular belief, Lorem Ipsum is not simply random text.  of classical Latin literature </p>
+        </div>
+        <div class="content">
+            <div class="contactInfo">
+                <h3>Contact Info</h3>
+                <div class="contactInfoBox">
+                    <div class="box">                   
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>Kyrgyzstan, Bishkek<br> Tokmok, 51 Richard Sorge street</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p>+996 (552) 222 774</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p>mashanloram.92@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formBx">
+                <form >
+                    <h3>Message Me</h3>
+                    <input type="text" name=""  placeholder="Full name">
+                    <input type="email" name="" placeholder="Email">
+                    <textarea placeholder="Your Message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        <p>2022 © Own portfolio | Powered by ..... All  Right Reserved.</p>
+    </div>
+
+    <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+ 
+        function toggleMenu(){
+            var menuToggle = document.querySelector('.toggle');
+            var menu = document.querySelector('.menu');
+            menuToggle.classList.toggle('active');
+            menu.classList.toggle('active');
+        }
+    </script>
+    
+</body>
+</html>
