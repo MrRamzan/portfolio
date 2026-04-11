@@ -267,7 +267,10 @@
                 <label for="message" class="visually-hidden">Ваше сообщение</label>
                 <textarea id="message" name="message" placeholder="Ваше сообщение" required></textarea>
 
-                <input type="submit" value="Отправить">
+                <button type="submit" class="submit-btn">
+                    <span class="submit-btn-text">Отправить</span>
+                    <span class="submit-spinner" aria-hidden="true"></span>
+                </button>
             </form>
         </div>
     </div>
@@ -276,6 +279,7 @@
 <div class="copyright">
     <p>2026 © Рамазан Машанло | Senior Java Developer</p>
 </div>
+
 <script src="sender.js"></script>
 </body>
 </html>

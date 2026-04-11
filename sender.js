@@ -11,6 +11,8 @@ function toggleMenu() {
 }
 
 const form = document.querySelector('#contact-form');
+const submitBtn = document.querySelector('.submit-btn');
+const submitBtnText = document.querySelector('.submit-btn-text');
 
 function showToast(message, type = 'info') {
     let toast = document.querySelector('.toast-notification');
@@ -50,6 +52,16 @@ function showToast(message, type = 'info') {
     }, 3000);
 }
 
+function setLoading(isLoading) {
+    if (!submitBtn || !submitBtnText) {
+        return;
+    }
+
+    submitBtn.disabled = isLoading;
+    submitBtn.classList.toggle('loading', isLoading);
+    submitBtnText.textContent = isLoading ? 'Отправка...' : 'Отправить';
+}
+
 form.addEventListener('submit', async function (event) {
     event.preventDefault();
 
@@ -61,6 +73,8 @@ form.addEventListener('submit', async function (event) {
     };
 
     try {
+        setLoading(true);
+
         const response = await fetch('http://localhost:8080/api/contact', {
             method: 'POST',
             headers: {
@@ -79,5 +93,7 @@ form.addEventListener('submit', async function (event) {
         }
     } catch (error) {
         showToast('Ошибка сети. Попробуйте позже.', 'error');
+    } finally {
+        setLoading(false);
     }
 });
