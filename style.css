@@ -564,6 +564,7 @@ header.sticky .toggle {
     color: #4caf50;
     margin-top: 10px;
     display: none;
+    min-height: 24px;
 }
 
 /* Visually hidden labels */
