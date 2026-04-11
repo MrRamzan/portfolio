@@ -11,13 +11,47 @@ function toggleMenu() {
 }
 
 const form = document.querySelector('#contact-form');
-const formStatus = document.querySelector('.form-status');
+
+function showToast(message, type = 'info') {
+    let toast = document.querySelector('.toast-notification');
+
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.className = 'toast-notification';
+        document.body.appendChild(toast);
+    }
+
+    const icon = type === 'success'
+        ? `
+            <svg class="toast-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20 6L9 17l-5-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        `
+        : `
+            <svg class="toast-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+        `;
+
+    toast.innerHTML = `${icon}<span class="toast-message">${message}</span>`;
+    toast.className = `toast-notification ${type} show`;
+
+    clearTimeout(window.toastTimer);
+    clearTimeout(window.toastHideTimer);
+
+    window.toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+
+        window.toastHideTimer = setTimeout(() => {
+            if (toast && !toast.classList.contains('show')) {
+                toast.remove();
+            }
+        }, 350);
+    }, 3000);
+}
 
 form.addEventListener('submit', async function (event) {
     event.preventDefault();
-
-    formStatus.style.display = 'none';
-    formStatus.textContent = '';
 
     const payload = {
         name: document.querySelector('#name').value.trim(),
@@ -38,15 +72,12 @@ form.addEventListener('submit', async function (event) {
         const data = await response.json();
 
         if (response.ok && data.success) {
-            formStatus.textContent = 'Сообщение отправлено! Я свяжусь с вами в ближайшее время.';
-            formStatus.style.display = 'block';
+            showToast('Сообщение отправлено! Я свяжусь с вами в ближайшее время.', 'success');
             form.reset();
         } else {
-            formStatus.textContent = data.message || 'Не удалось отправить сообщение.';
-            formStatus.style.display = 'block';
+            showToast(data.message || 'Не удалось отправить сообщение.', 'error');
         }
     } catch (error) {
-        formStatus.textContent = 'Ошибка сети. Попробуйте позже.';
-        formStatus.style.display = 'block';
+        showToast('Ошибка сети. Попробуйте позже.', 'error');
     }
 });
